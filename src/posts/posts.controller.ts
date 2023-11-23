@@ -10,8 +10,7 @@ import { PostsService } from './posts.service';
 
 @Controller('posts')
 export class PostsController {
-  constructor(private readonly postsService: PostsService) {
-  }
+  constructor(private readonly postsService: PostsService) { }
 
   // 1) GET /posts
   // 모든 post를 가져온다
