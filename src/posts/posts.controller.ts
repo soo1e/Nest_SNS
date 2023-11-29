@@ -1,10 +1,12 @@
 import {
   Body,
-  Controller, Delete,
+  Controller,
+  Delete,
   Get,
   NotFoundException,
-  Param, Patch,
-  Post, Put
+  Param,
+  Post,
+  Put,
 } from '@nestjs/common';
 import { PostsService } from './posts.service';
 
@@ -45,9 +47,9 @@ export class PostsController {
   @Put(':id')
   putPost(
     @Param('id') id: string,
-    @Param('author') author?: string,
-    @Param('title') title?: string,
-    @Param('content') content?: string,
+    @Body('author') author?: string,
+    @Body('title') title?: string,
+    @Body('content') content?: string,
   ) {
     return this.postsService.updatePost(+id, author, title, content);
   }
